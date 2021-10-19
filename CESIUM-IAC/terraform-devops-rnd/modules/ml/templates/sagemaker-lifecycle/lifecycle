@@ -1,0 +1,6 @@
+set -e
+ENVIRONMENT=python3
+NOTEBOOK_FILE="/home/ec2-user/SageMaker/MLworkflow.ipynb"
+source /home/ec2-user/anaconda3/bin/activate "$ENVIRONMENT"
+nohup jupyter nbconvert "$NOTEBOOK_FILE" --ExecutePreprocessor.kernel_name=python3 --to notebook --inplace  --execute &
+source /home/ec2-user/anaconda3/bin/deactivate
